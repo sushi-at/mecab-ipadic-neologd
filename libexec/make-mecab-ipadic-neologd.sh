@@ -108,6 +108,8 @@ else
 fi
 
 IPADIC_HASH_VAL=`openssl sha1 ${BASEDIR}/../build/${ORG_DIC_NAME}.tar.gz | cut -d $' ' -f 2,2`
+echo "***** DEBUG *****"
+echo "IPADIC_HASH_VAL = '${IPADIC_HASH_VAL}'"
 if [ "${IPADIC_HASH_VAL}" != "0d9d021853ba4bb4adfa782ea450e55bfe1a229b" ]; then
     echo "$ECHO_PREFIX Fail to download ${BASEDIR}/../build/${ORG_DIC_NAME}.tar.gz"
     echo "$ECHO_PREFIX You should remove ${BASEDIR}/../build/${ORG_DIC_NAME}.tar.gz before retrying to install mecab-ipadic-NEologd"
